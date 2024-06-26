@@ -1,5 +1,11 @@
 function Home() {
+  return <h1>Hello, friend.</h1>;
+}
+
+function Home() {
+
   return <h1>Hello, friend.</h1>
 }
 
-export default Home;
+export default Home 
+assd  
