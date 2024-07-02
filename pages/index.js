@@ -2,10 +2,4 @@ function Home() {
   return <h1>Hello, friend.</h1>;
 }
 
-function Home() {
-
-  return <h1>Hello, friend.</h1>
-}
-
-export default Home 
-assd  
+export default Home;
