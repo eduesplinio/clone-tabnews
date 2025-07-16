@@ -8,12 +8,9 @@
     "services:up": "docker compose -f infra/compose.yaml up -d",
     "services:stop": "docker compose -f infra/compose.yaml stop",
     "services:down": "docker compose -f infra/compose.yaml down",
-    "lint": "npm run lint:eslint && npm run lint:prettier",
-    "lint:eslint": "next lint --dir .",
-    "lint:prettier": "prettier --check .",
-    "lint:fix": "next lint --fix --dir . && prettier --write .",
     "lint:prettier:check": "prettier --check .",
     "lint:prettier:fix": "prettier --write .",
+    "lint:eslint:check": "next lint --dir .",
     "vercel-build": "next build",
     "test": "npm run services:up && npm run wait-for-postgres && concurrently -n next,jest --hide next -k -s command-jest 'next dev' 'jest --runInBand'",
     "test:watch": "jest --watchAll --runInBand",
@@ -35,26 +32,18 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.31.0",
-    "@next/eslint-plugin-next": "^15.4.1",
     "concurrently": "^8.2.2",
-    "eslint": "^8.57.0",
-    "eslint-config-next": "15.4.1",
-    "eslint-config-prettier": "^10.1.5",
-    "eslint-plugin-jest": "^28.8.0",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^13.1.6",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jest": "^28.6.0",
     "husky": "^9.1.4",
     "jest": "^29.6.2",
     "lint-staged": "^15.5.1",
     "prettier": "^3.3.2"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{json,css,scss,md}": [
+    "*.{js,jsx,ts,tsx,json,css,scss,md,yaml,yml}": [
       "prettier --write"
     ]
   }
